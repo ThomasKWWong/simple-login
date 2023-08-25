@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 //connect to mongoDB
-mongoose.connect('mongodb://localhost:27017/registered-users');
+mongoose.connect('mongodb://127.0.0.1:27017/registered-users');
 
 
 app.post("/register", async (req, res) => {
