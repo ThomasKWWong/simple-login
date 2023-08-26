@@ -21,7 +21,9 @@ function App() {
         })
 
         const data = await response.json();
-        console.log(data);
+        
+        //send to login page with successful registration
+        
     }
 
     return (

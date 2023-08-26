@@ -20,7 +20,8 @@ function App() {
         })
 
         const data = await response.json();
-        console.log(data);
+        
+        //add some condition with successful login
     }
 
     return (

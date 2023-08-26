@@ -3,6 +3,7 @@ const app = express();
 const cors = require("cors");
 const mongoose = require('mongoose');
 const newUser = require('./mongo/user-data')
+const jwt = require('jsonwebtoken');
 
 //middleware
 app.use(cors());
@@ -34,8 +35,19 @@ app.post("/api/login", async (req, res) => {
         password: req.body.password,
     })
 
+    //if user exists
     if (user) {
-        return res.json({status: "ok", user: true});
+
+        //authentication token for successful login
+        const token = jwt.sign(
+        {
+            username: user.username,
+            email: user.email,
+        },
+        'secret123'
+        )
+
+        return res.json({status: "ok", user: token});
     }
     else {
         return res.json({status: "error", user: false});
