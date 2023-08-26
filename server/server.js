@@ -12,7 +12,7 @@ app.use(express.json());
 mongoose.connect('mongodb://127.0.0.1:27017/registered-users');
 
 
-app.post("/register", async (req, res) => {
+app.post("/api/register", async (req, res) => {
     try{
         await newUser.create({
             username: req.body.username,
@@ -28,12 +28,11 @@ app.post("/register", async (req, res) => {
 });
 
 
-app.post("/login", async (req, res) => {
+app.post("/api/login", async (req, res) => {
     const user = await newUser.findOne({
         email: req.body.email,
         password: req.body.password,
     })
-    res.json({status: 'ok'});
 
     if (user) {
         return res.json({status: "ok", user: true});
