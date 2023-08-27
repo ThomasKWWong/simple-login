@@ -54,6 +54,11 @@ app.post("/api/login", async (req, res) => {
     }
 });
 
+app.post("/api/token-confirmation", async (req, res) => {
+    const user = jwt.decode(req.body.token);
+    return res.json({user: user});
+})
+
 
 app.listen(5000, () => {
     console.log("Server started on port 5000");

@@ -23,6 +23,7 @@ function App() {
         
         //add some condition with successful login
         if(data.user){
+            sessionStorage.setItem('token', data.user);
             window.location.href = '/welcome';
         }
     }
