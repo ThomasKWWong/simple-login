@@ -22,6 +22,9 @@ function App() {
         const data = await response.json();
         
         //add some condition with successful login
+        if(data.user){
+            window.location.href = '/welcome';
+        }
     }
 
     return (
