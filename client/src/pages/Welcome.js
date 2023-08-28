@@ -1,7 +1,11 @@
 import React, { useEffect } from "react";
 
+
 const Welcome = () => {
-    
+    async function populateHeader() {
+        
+    }
+
     //confirm user is logged in
     useEffect(() => {
         async function fetchData() {
@@ -24,6 +28,9 @@ const Welcome = () => {
                     sessionStorage.removeItem('token');
                     window.location.href = '/login'
                 }
+                else {
+                    populateHeader();
+                }
             }
             else { //no token, not logged in
                 window.location.href = '/login'
@@ -39,7 +46,7 @@ const Welcome = () => {
     return (
         <>
         <h1>Welcome</h1> <br/>
-        <h2>you have logged in successfully</h2>
+        <h2>Loading your account</h2>
         </>
     )
 }

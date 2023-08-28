@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-// import "./App.css";
+import Header from "../components/Header"
+import Footer from "../components/Footer"
+import "../App.css";
 
 function App() {
     // const [username, setUsername] = useState('');
@@ -30,6 +32,7 @@ function App() {
 
     return (
         <div>
+            <Header/>
             <h1>Login</h1>
             <br/>
             <form onSubmit={loginUser}>
@@ -38,6 +41,7 @@ function App() {
                 <input value = {password} onChange={(e) => setPassword(e.target.value)} type = "text" placeholder="Password"/> <br/>
                 <input type = "submit" value = "Login" />
             </form>
+            <Footer/>
         </div>
     )
 }
