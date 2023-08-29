@@ -4,6 +4,7 @@ const cors = require("cors");
 const mongoose = require('mongoose');
 const newUser = require('./mongo/user-data')
 const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
 
 //middleware
 app.use(cors());
@@ -15,10 +16,11 @@ mongoose.connect('mongodb://127.0.0.1:27017/registered-users');
 
 app.post("/api/register", async (req, res) => {
     try{
+        const encryptedPass = await bcrypt.hash(req.body.password, 10);
         await newUser.create({
             username: req.body.username,
             email: req.body.email,
-            password: req.body.password
+            password: encryptedPass,
         });
         res.json({status: 'ok'});
     }
@@ -32,11 +34,17 @@ app.post("/api/register", async (req, res) => {
 app.post("/api/login", async (req, res) => {
     const user = await newUser.findOne({
         email: req.body.email,
-        password: req.body.password,
     })
 
-    //if user exists
-    if (user) {
+    //if user doesn't exist
+    if(!user){
+        return res.json({status: "error", user: false});
+    }
+
+    const isPasswordValid = await bcrypt.compare(req.body.password, user.password);
+
+    //if password is valid, else invalid
+    if (isPasswordValid) {
 
         //authentication token for successful login
         const token = jwt.sign(
