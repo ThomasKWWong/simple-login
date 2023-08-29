@@ -89,3 +89,8 @@ export const SDiv = styled.div`
     position:fixed;
     top:25%;
 `
+
+export const SDivR = styled.div`
+    position: fixed;
+    top: 22%;
+`
