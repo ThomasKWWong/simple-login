@@ -56,7 +56,7 @@ app.post("/api/login", async (req, res) => {
 
 app.post("/api/token-confirmation", async (req, res) => {
     const user = jwt.decode(req.body.token);
-    return res.json({user: user});
+    return res.json({username: user.username});
 })
 
 

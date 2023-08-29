@@ -1,10 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import { SDiv } from '../components/styles';
 
 
 const Welcome = () => {
-    async function populateHeader() {
-        
-    }
+    const [username, setUsername] = useState('');
+
+    //fetch username if exists
+    // async function populateUsername(x) {
+    //     setUsername(x);
+    //     console.log(username);
+    // };
 
     //confirm user is logged in
     useEffect(() => {
@@ -22,14 +29,13 @@ const Welcome = () => {
                 })
 
                 const data = await response.json();
-                console.log(data);
 
                 if (!data) {
                     sessionStorage.removeItem('token');
                     window.location.href = '/login'
                 }
                 else {
-                    populateHeader();
+                    setUsername(data.username);
                 }
             }
             else { //no token, not logged in
@@ -45,8 +51,12 @@ const Welcome = () => {
 
     return (
         <>
-        <h1>Welcome</h1> <br/>
-        <h2>Loading your account</h2>
+        <Header/>
+        <SDiv>
+        <h1>Welcome {username || "username not found"}</h1> <br/>
+        <h2>Enjoy your stay</h2>
+        </SDiv>
+        <Footer/>
         </>
     )
 }

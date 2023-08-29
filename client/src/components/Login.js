@@ -25,6 +25,9 @@ const Login = () => {
             sessionStorage.setItem('token', data.user);
             window.location.href = '/welcome';
         }
+        else {
+            alert("Username/email or password incorrect")
+        }
     }
 
     return(
