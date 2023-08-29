@@ -15,3 +15,8 @@ div
     height: 100vh;
     width: 100%;
 }
+
+body
+{
+    text-align: center;
+}

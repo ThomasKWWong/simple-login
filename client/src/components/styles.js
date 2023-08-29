@@ -35,6 +35,7 @@ export const FootDiv = styled.div`
 `;
 
 export const SForm = styled.form`
+    display: inline-block;
     width: 100%;
     max-width: 400px;
     padding: 40px;
@@ -56,6 +57,7 @@ export const SFormControl = styled.span`
 export const SLabel = styled.label`
     font-size: 16px;
     font-weight: bold;
+    color: black;
 `;
 
 export const SInput = styled.input`
@@ -82,3 +84,8 @@ export const SButton = styled.button`
         background-color: #dbdbdb;
     }
 `;
+
+export const SDiv = styled.div`
+    position:fixed;
+    top:25%;
+`
