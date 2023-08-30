@@ -32,11 +32,16 @@ app.post("/api/register", async (req, res) => {
 
 
 app.post("/api/login", async (req, res) => {
-    const user = await newUser.findOne({
+    let user = await newUser.findOne({
         email: req.body.email,
     })
 
-    //if user doesn't exist
+    // if user doesn't exist using email, try username. Allows for login with either username or email
+    if(!user){
+        user = await newUser.findOne({
+            username: req.body.email,
+        })
+    }
     if(!user){
         return res.json({status: "error", user: false});
     }
