@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const TextSpan = styled.span`
     display: inline-block;
@@ -6,10 +7,11 @@ export const TextSpan = styled.span`
     color: white;
 `
 
-export const HeadDiv = styled.div`
+export const HeadDiv = styled.nav`
     /* Dimensions and color */
     width: 100%;
-    height: 10%;
+    height: 80px;
+    max-height: 10%;
     background-color: #b38bb0;
 
     /* Aligns the text/items in middle of footer */
@@ -18,11 +20,42 @@ export const HeadDiv = styled.div`
     justify-content: center;
 `;
 
+export const HeadDivLeft = styled.div`
+    flex: 70%;
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+    height: 80px;
+`
+
+export const HeadDivLinkContainer = styled.div`
+    display: flex;
+    height: 100%;
+    top 50%;
+    align-items: center;
+`
+
+export const HeadDivLink = styled(Link)`
+    color: white;
+    font-size: x-large;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    margin: 10px;
+`
+
+export const HeadDivRight = styled.div`
+    flex: 30%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5%;
+    height: 80px;
+`
+
 export const FootDiv = styled.div`
     /* Dimensions and color */
     bottom: 0;
     width: 100%;
-    height: 10%;
+    height: 80px;
     background-color: #b38bb0;
 
     /* Keeps footer at bottom of page */

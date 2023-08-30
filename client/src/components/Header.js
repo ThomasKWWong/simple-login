@@ -1,12 +1,21 @@
 import React from 'react';
-import { TextSpan, HeadDiv } from './styles';
+import { HeadDiv, HeadDivLeft, HeadDivLinkContainer, HeadDivRight, HeadDivLink } from './styles';
+
 
 const Header = () => {
     return(
         <HeadDiv>
-            <TextSpan>
-                <h1>Header</h1>
-            </TextSpan>
+            <HeadDivLeft>
+                <HeadDivLinkContainer>
+                    <HeadDivLink to="/login"> Login</HeadDivLink>
+                    <HeadDivLink to="/register">  Register</HeadDivLink>
+                    <HeadDivLink to="/testing">  Test</HeadDivLink>
+                    <HeadDivLink to="/contact">  Contact</HeadDivLink>
+                </HeadDivLinkContainer>
+            </HeadDivLeft>
+            <HeadDivRight>
+
+            </HeadDivRight>
         </HeadDiv>
     )
 }
