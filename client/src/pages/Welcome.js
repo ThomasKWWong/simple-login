@@ -53,7 +53,7 @@ const Welcome = () => {
         <>
         <Header/>
         <SDiv>
-        <h1>Welcome {username || "username not found"}</h1> <br/>
+        <h1>Welcome {username || "username not found"},</h1> <br/>
         <h2>Enjoy your stay</h2>
         </SDiv>
         <Footer/>

@@ -11,6 +11,7 @@ export const HeadDiv = styled.nav`
     /* Dimensions and color */
     width: 100%;
     height: 80px;
+    top: 0;
     max-height: 10%;
     background-color: #b38bb0;
 
@@ -37,10 +38,14 @@ export const HeadDivLinkContainer = styled.div`
 
 export const HeadDivLink = styled(Link)`
     color: white;
-    font-size: x-large;
+    font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
     margin: 10px;
+    transition: 0.3s;
+    &:hover {
+        font-size: 27px;
+    }
 `
 
 export const HeadDivRight = styled.div`
