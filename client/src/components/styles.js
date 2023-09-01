@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const TextSpan = styled.span`
@@ -14,6 +14,9 @@ export const HeadDiv = styled.nav`
     top: 0;
     max-height: 10%;
     background-color: #b38bb0;
+
+    position: fixed;
+    z-index: 1;
 
     /* Aligns the text/items in middle of footer */
     display: flex;
@@ -131,4 +134,27 @@ export const SDiv = styled.div`
 export const SDivR = styled.div`
     position: fixed;
     top: 22%;
+`
+
+export const AnimatedDiv = styled.div`
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+
+const BGAnimation = keyframes`
+
+`
+
+export const AnimatedWave = styled.div`
+    height: 70vh;
+    wdith: 100%;
+
+    position: absolute;
+    bottom: 0;
+
+    
 `

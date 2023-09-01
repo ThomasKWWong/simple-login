@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SButton, SForm, SFormControl, SFormTitle, SInput, SLabel, SDiv } from './styles'
+import { SButton, SForm, SFormControl, SFormTitle, SInput, SLabel, SDiv, AnimatedDiv, AnimatedWave } from './styles'
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -31,18 +31,21 @@ const Login = () => {
     }
 
     return(
-    <SDiv>
-        <SForm onSubmit={loginUser}>
-            <SFormTitle>Login</SFormTitle> <br/>
-            <SFormControl>
-                <SLabel>Email/Username</SLabel> <br/>
-                <SInput value= {email} onChange={(e) => setEmail(e.target.value)} placeholder="Type your email/username"/><br/>
-                <SLabel>Password</SLabel><br/>
-                <SInput value= {password} onChange={(e) => setPassword(e.target.value)} placeholder='Type your password'/><br/>
-            </SFormControl>
-            <SButton type = "submit">Login</SButton>
-        </SForm>
-    </SDiv>
+    <AnimatedDiv>
+        <AnimatedWave/>
+            <SDiv>
+                <SForm onSubmit={loginUser}>
+                    <SFormTitle>Login</SFormTitle> <br/>
+                    <SFormControl>
+                        <SLabel>Email/Username</SLabel> <br/>
+                        <SInput value= {email} onChange={(e) => setEmail(e.target.value)} placeholder="Type your email/username"/><br/>
+                        <SLabel>Password</SLabel><br/>
+                        <SInput value= {password} onChange={(e) => setPassword(e.target.value)} placeholder='Type your password'/><br/>
+                    </SFormControl>
+                    <SButton type = "submit">Login</SButton>
+                </SForm>
+            </SDiv>
+    </AnimatedDiv>
     )
 };
 
