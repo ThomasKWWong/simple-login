@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import { TextSpan, FootDiv } from './styles';
 
 const Footer = () => {

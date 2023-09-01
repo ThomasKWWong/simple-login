@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { SButton, SForm, SFormControl, SFormTitle, SInput, SLabel, SDiv, AnimatedDiv, AnimatedWave } from './styles'
+import { SButton, SForm, SFormControl, SFormTitle, SInput, SLabel, SDiv, AnimatedDiv } from './styles'
+import BGWave from './BGWave';
+
+
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -32,7 +35,7 @@ const Login = () => {
 
     return(
     <AnimatedDiv>
-        <AnimatedWave/>
+        <BGWave/>
             <SDiv>
                 <SForm onSubmit={loginUser}>
                     <SFormTitle>Login</SFormTitle> <br/>

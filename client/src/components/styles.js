@@ -1,6 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 
+
 export const TextSpan = styled.span`
     display: inline-block;
     vertical-allign: middle;
@@ -13,7 +14,7 @@ export const HeadDiv = styled.nav`
     height: 80px;
     top: 0;
     max-height: 10%;
-    background-color: #b38bb0;
+    background-color: #6e6e6e;
 
     position: fixed;
     z-index: 1;
@@ -64,7 +65,7 @@ export const FootDiv = styled.div`
     bottom: 0;
     width: 100%;
     height: 80px;
-    background-color: #b38bb0;
+    background-color: #6e6e6e;
 
     /* Keeps footer at bottom of page */
     position: fixed;
@@ -80,7 +81,7 @@ export const SForm = styled.form`
     width: 100%;
     max-width: 400px;
     padding: 40px;
-    background-color: #b38bb0;
+    background-color: #6e6e6e;
     border-radius: 10px;
     box-sizing: border-box;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
@@ -88,7 +89,7 @@ export const SForm = styled.form`
 
 export const SFormTitle = styled.h1`
     font-size: 36px;
-    color: black;
+    color: white;
     text-align: center;
 `;
 
@@ -98,7 +99,7 @@ export const SFormControl = styled.span`
 export const SLabel = styled.label`
     font-size: 16px;
     font-weight: bold;
-    color: black;
+    color: white;
 `;
 
 export const SInput = styled.input`
@@ -145,16 +146,20 @@ export const AnimatedDiv = styled.div`
     align-items: center;
 `
 
-const BGAnimation = keyframes`
-
+const WaveAnimation = keyframes`
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
 `
 
-export const AnimatedWave = styled.div`
-    height: 70vh;
-    wdith: 100%;
-
-    position: absolute;
+export const AnimatedWave = styled.svg`
+    height: 90vh;
+    width: 200%;
     bottom: 0;
-
-    
+    position: absolute;
+    animation: ${WaveAnimation} 10s linear infinite;
 `
+
