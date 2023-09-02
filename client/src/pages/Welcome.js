@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { SDiv } from '../components/styles';
+import { SDivL } from '../components/styles';
 
 
 const Welcome = () => {
@@ -52,10 +52,10 @@ const Welcome = () => {
     return (
         <>
         <Header/>
-        <SDiv>
+        <SDivL>
         <h1>Welcome {username || "username not found"},</h1> <br/>
         <h2>Enjoy your stay</h2>
-        </SDiv>
+        </SDivL>
         <Footer/>
         </>
     )

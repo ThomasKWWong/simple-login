@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export const TextSpan = styled.span`
     display: inline-block;
     vertical-allign: middle;
-    color: white;
+    color: black;
 `
 
 export const HeadDiv = styled.nav`
@@ -14,7 +14,8 @@ export const HeadDiv = styled.nav`
     height: 80px;
     top: 0;
     max-height: 10%;
-    background-color: #6e6e6e;
+    background-color: white;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
 
     position: fixed;
     z-index: 1;
@@ -41,7 +42,7 @@ export const HeadDivLinkContainer = styled.div`
 `
 
 export const HeadDivLink = styled(Link)`
-    color: white;
+    color: black;
     font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
@@ -65,7 +66,8 @@ export const FootDiv = styled.div`
     bottom: 0;
     width: 100%;
     height: 80px;
-    background-color: #6e6e6e;
+    background-color: white;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
 
     /* Keeps footer at bottom of page */
     position: fixed;
@@ -81,7 +83,7 @@ export const SForm = styled.form`
     width: 100%;
     max-width: 400px;
     padding: 40px;
-    background-color: #6e6e6e;
+    background-color: white;
     border-radius: 10px;
     box-sizing: border-box;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
@@ -89,7 +91,7 @@ export const SForm = styled.form`
 
 export const SFormTitle = styled.h1`
     font-size: 36px;
-    color: white;
+    color: black;
     text-align: center;
 `;
 
@@ -99,7 +101,7 @@ export const SFormControl = styled.span`
 export const SLabel = styled.label`
     font-size: 16px;
     font-weight: bold;
-    color: white;
+    color: black;
 `;
 
 export const SInput = styled.input`
@@ -108,6 +110,7 @@ export const SInput = styled.input`
     height: 35px;
     outline: none;
     border: none;
+    border-bottom: 2px;
     border radius: 5px;
     margin: 10px 0 20px 0;
     box-sizing: border-box;
@@ -127,7 +130,7 @@ export const SButton = styled.button`
     }
 `;
 
-export const SDiv = styled.div`
+export const SDivL = styled.div`
     position:fixed;
     top:25%;
 `
@@ -138,12 +141,7 @@ export const SDivR = styled.div`
 `
 
 export const AnimatedDiv = styled.div`
-    width: 100%;
-    height: 100vh;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 `
 
 const WaveAnimation = keyframes`
@@ -161,5 +159,18 @@ export const AnimatedWave = styled.svg`
     bottom: 0;
     position: absolute;
     animation: ${WaveAnimation} 10s linear infinite;
+`
+
+export const SSVG = styled.svg`
+    position: absolute;
+    width: 100%;
+`
+
+export const SDiv = styled.svg`
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
 `
 

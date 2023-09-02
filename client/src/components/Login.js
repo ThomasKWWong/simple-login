@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SButton, SForm, SFormControl, SFormTitle, SInput, SLabel, SDiv, AnimatedDiv } from './styles'
+import { SButton, SForm, SFormControl, SFormTitle, SInput, SLabel, SDivL, AnimatedDiv } from './styles'
 import BGWave from './BGWave';
 
 
@@ -36,7 +36,7 @@ const Login = () => {
     return(
     <AnimatedDiv>
         <BGWave/>
-            <SDiv>
+            <SDivL>
                 <SForm onSubmit={loginUser}>
                     <SFormTitle>Login</SFormTitle> <br/>
                     <SFormControl>
@@ -47,7 +47,7 @@ const Login = () => {
                     </SFormControl>
                     <SButton type = "submit">Login</SButton>
                 </SForm>
-            </SDiv>
+            </SDivL>
     </AnimatedDiv>
     )
 };

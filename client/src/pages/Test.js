@@ -1,15 +1,9 @@
 import React from "react";
-import Login from '../components/Login';
-import Header from '../components/Header';
-import Footer from "../components/Footer";
+import BGWave from "../components/BGWave";
 
 const Test = () => {
     return (
-        <>
-            <Header/>
-            <Login/>
-            <Footer/>
-        </>
+            <BGWave/>
     )
 }
 
