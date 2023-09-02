@@ -84,7 +84,7 @@ export const FootDiv = styled.div`
 export const SForm = styled.form`
     display: inline-block;
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     padding: 40px;
     background-color: white;
     border-radius: 10px;
