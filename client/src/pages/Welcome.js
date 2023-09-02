@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { SDivL } from '../components/styles';
+import { AnimatedDiv, SDivR } from '../components/styles';
+import BGWave from "../components/BGWave";
 
 
 const Welcome = () => {
@@ -50,14 +51,15 @@ const Welcome = () => {
     
 
     return (
-        <>
-        <Header/>
-        <SDivL>
-        <h1>Welcome {username || "username not found"},</h1> <br/>
-        <h2>Enjoy your stay</h2>
-        </SDivL>
-        <Footer/>
-        </>
+        <AnimatedDiv>
+            <BGWave/>
+            <Header/>
+            <SDivR>
+                <h1>Welcome {username || "username not found"},</h1> <br/>
+                <h2>Enjoy your stay!</h2>
+            </SDivR>
+            <Footer/>
+        </AnimatedDiv>
     )
 }
 

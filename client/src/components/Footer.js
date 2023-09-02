@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <FootDiv>
             <TextSpan>
-                <h1>Footer</h1>
+                <h1>Thomas Wong's Simple Login Page</h1>
             </TextSpan>
         </FootDiv>
     )

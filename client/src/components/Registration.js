@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { SButton, SForm, SFormControl, SFormTitle, SInput, SLabel, SDivR } from './styles'
+import { SButton, SForm, SFormControl, SFormTitle, SInput, SLabel, SDivR, AnimatedDiv } from './styles'
+import BGWave from './BGWave';
 
 const Registration = () => {
     const [username, setUsername] = useState('');
@@ -30,20 +31,23 @@ const Registration = () => {
     }
 
     return (
-        <SDivR>
-            <SForm onSubmit={registerUser}>
-                <SFormTitle>Register</SFormTitle> <br/>
-                <SFormControl>
-                    <SLabel>Username</SLabel> <br/>
-                    <SInput value= {username} onChange={(e) => setUsername(e.target.value)} placeholder="Type your username"/><br/>
-                    <SLabel>Email</SLabel> <br/>
-                    <SInput value= {email} onChange={(e) => setEmail(e.target.value)} placeholder="Type your email"/><br/>
-                    <SLabel>Password</SLabel><br/>
-                    <SInput value= {password} onChange={(e) => setPassword(e.target.value)} placeholder='Type your password'/><br/>
-                </SFormControl>
-                <SButton type = "submit">Register</SButton>
-            </SForm>
-        </SDivR>
+        <AnimatedDiv>
+            <BGWave/>
+            <SDivR>
+                <SForm onSubmit={registerUser}>
+                    <SFormTitle>Register</SFormTitle> <br/>
+                    <SFormControl>
+                        <SLabel>Username</SLabel> <br/>
+                        <SInput value= {username} onChange={(e) => setUsername(e.target.value)} placeholder="Type your username"/><br/>
+                        <SLabel>Email</SLabel> <br/>
+                        <SInput value= {email} onChange={(e) => setEmail(e.target.value)} placeholder="Type your email"/><br/>
+                        <SLabel>Password</SLabel><br/>
+                        <SInput value= {password} onChange={(e) => setPassword(e.target.value)} placeholder='Type your password'/><br/>
+                    </SFormControl>
+                    <SButton type = "submit">Register</SButton>
+                </SForm>
+            </SDivR>
+        </AnimatedDiv>
     )
 }
 

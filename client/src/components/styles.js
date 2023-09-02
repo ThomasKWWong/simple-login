@@ -1,5 +1,8 @@
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
+import { ReactComponent as BG} from '../assets/bg.svg';
+import { ReactComponent as Backwave} from '../assets/backwave.svg';
+import { ReactComponent as Frontwave} from '../assets/frontwave.svg';
 
 
 export const TextSpan = styled.span`
@@ -166,11 +169,32 @@ export const SSVG = styled.svg`
     width: 100%;
 `
 
-export const SDiv = styled.svg`
+export const SDiv = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 100%;
     width: 100%;
 `
 
+export const Background = styled(BG)`
+    position: fixed;
+    bottom: 0;
+    left: 0;
+`
+
+export const FWave = styled(Frontwave)`
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: auto;
+    width: 100%;
+`
+
+export const BWave = styled(Backwave)`
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: auto;
+    width: 100%;
+`
