@@ -1,5 +1,5 @@
 import React, {useRef} from 'react';
-import { SForm, SInput, SButton, SFormControl, SLabel, SFormTitle, SDiv, SDivL } from './styles';
+import { SForm, SInput, SButton, SFormControl, SLabel, SFormTitle, SDiv, SDivL, SInputHeight } from './styles';
 import emailjs from '@emailjs/browser';
 
 const ContactForm = () => {
@@ -10,9 +10,9 @@ const ContactForm = () => {
 
     emailjs.sendForm('service_wvn76eh', 'template_1md0jk5', form.current, 'dsnlYoiE9sspgE6Bk')
       .then((result) => {
-          console.log(result.text);
+          alert("message successfully sent. Thank you!")
       }, (error) => {
-          console.log(error.text);
+          alert("message unsuccessful. error:" + error.text);
       });
   };
 
@@ -25,8 +25,8 @@ const ContactForm = () => {
                 <SFormControl>
                     <SLabel>Email</SLabel>
                     <SInput type="text" placeholder='Type your email' name="user_email"></SInput>
-                    <SLabel>Subject</SLabel>
-                    <SInput type="text" placeholder='Type your message subject' name="message"></SInput>
+                    <SLabel>Message</SLabel>
+                    <SInputHeight type="text" placeholder='Type your message subject' name="message"></SInputHeight>
                 </SFormControl>
                 <SButton type = "submit">Submit</SButton>
             </SForm>

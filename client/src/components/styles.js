@@ -112,13 +112,32 @@ export const SInput = styled.input`
     width: 100%;
     height: 35px;
     outline: none;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 2px solid black;
+    border radius: 5px;
+    margin: 10px 0 20px 0;
+    box-sizing: border-box;
+    &:focus {
+        padding: 3px;
+        border-bottom: 3px solid black;
+    }
+`;
+
+export const SInputHeight = styled.input`
+    display: block;
+    width: 100%;
+    height: 100px;
+    outline: none;
     border: none;
     border-bottom: 2px;
     border radius: 5px;
     margin: 10px 0 20px 0;
     box-sizing: border-box;
+    
     &:focus {
-        box-shadow: 0px 0px 2px black;
+        border: 2px solid black;
     }
 `;
 
